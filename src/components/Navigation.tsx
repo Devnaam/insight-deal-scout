@@ -19,15 +19,15 @@ export const Navigation = ({ currentPage, onPageChange }: NavigationProps) => {
   ];
 
   return (
-    <nav className="bg-card border-b border-border shadow-card">
-      <div className="container mx-auto px-4">
+    <nav className="glass-panel border-b border-border shadow-terminal backdrop-blur-xl">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
-              <BarChart3 className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-primary">InvestAI</span>
+          <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center shadow-glow animate-float">
+            <BarChart3 className="h-6 w-6 text-primary-foreground" />
+          </div>
+          <span className="text-2xl font-bold text-foreground text-3d">InvestAI</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -37,10 +37,10 @@ export const Navigation = ({ currentPage, onPageChange }: NavigationProps) => {
               return (
                 <Button
                   key={item.id}
-                  variant={currentPage === item.id ? "accent" : "ghost"}
+                  variant={currentPage === item.id ? "terminal" : "ghost"}
                   size="sm"
                   onClick={() => onPageChange(item.id)}
-                  className="flex items-center space-x-2"
+                  className="flex items-center space-x-2 font-medium"
                 >
                   <Icon className="h-4 w-4" />
                   <span>{item.label}</span>
@@ -69,13 +69,13 @@ export const Navigation = ({ currentPage, onPageChange }: NavigationProps) => {
                 return (
                   <Button
                     key={item.id}
-                    variant={currentPage === item.id ? "accent" : "ghost"}
+                    variant={currentPage === item.id ? "terminal" : "ghost"}
                     size="sm"
                     onClick={() => {
                       onPageChange(item.id);
                       setIsMobileMenuOpen(false);
                     }}
-                    className="justify-start flex items-center space-x-2 w-full"
+                    className="justify-start flex items-center space-x-2 w-full font-medium"
                   >
                     <Icon className="h-4 w-4" />
                     <span>{item.label}</span>

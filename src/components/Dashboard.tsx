@@ -84,135 +84,131 @@ const getRiskColor = (risk: string) => {
 
 export const Dashboard = () => {
   return (
-    <div className="container mx-auto px-4 py-8 space-y-8 animate-fade-in">
+    <div className="container mx-auto px-6 py-12 space-y-12 animate-fade-in">
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">Investment Dashboard</h1>
-          <p className="text-muted-foreground">Track and analyze your startup pipeline</p>
+          <h1 className="text-4xl font-bold text-foreground mb-3 text-3d-lg">Investment Dashboard</h1>
+          <p className="text-muted-foreground text-lg font-medium">Track and analyze your startup pipeline with AI precision</p>
         </div>
-        <Button variant="hero" size="lg">
-          <TrendingUp className="mr-2 h-5 w-5" />
+        <Button variant="hero" size="xl" className="animate-glow">
+          <TrendingUp className="mr-2 h-6 w-6" />
           New Analysis
         </Button>
       </div>
 
       {/* Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="shadow-card">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Deals</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">127</div>
-            <p className="text-xs text-muted-foreground">
-              <span className="text-success">+12%</span> from last month
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="data-panel p-6 rounded-2xl hover:shadow-glow transition-all duration-500 group">
+          <div className="flex flex-row items-center justify-between space-y-0 pb-3">
+            <h3 className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">Total Deals</h3>
+            <DollarSign className="h-5 w-5 text-accent group-hover:scale-110 transition-transform" />
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-3d mb-1">127</div>
+            <p className="text-sm text-muted-foreground">
+              <span className="text-success font-semibold">+12%</span> from last month
             </p>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
-        <Card className="shadow-card">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">In Progress</CardTitle>
-            <Clock className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">18</div>
-            <p className="text-xs text-muted-foreground">
-              <span className="text-warning">3</span> completing soon
+        <div className="data-panel p-6 rounded-2xl hover:shadow-glow transition-all duration-500 group">
+          <div className="flex flex-row items-center justify-between space-y-0 pb-3">
+            <h3 className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">In Progress</h3>
+            <Clock className="h-5 w-5 text-accent group-hover:scale-110 transition-transform" />
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-3d mb-1">18</div>
+            <p className="text-sm text-muted-foreground">
+              <span className="text-warning font-semibold">3</span> completing soon
             </p>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
-        <Card className="shadow-card">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Avg Analysis Time</CardTitle>
-            <TrendingDown className="h-4 w-4 text-success" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">4.2m</div>
-            <p className="text-xs text-muted-foreground">
-              <span className="text-success">-18%</span> improvement
+        <div className="data-panel p-6 rounded-2xl hover:shadow-glow transition-all duration-500 group">
+          <div className="flex flex-row items-center justify-between space-y-0 pb-3">
+            <h3 className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">Avg Analysis Time</h3>
+            <TrendingDown className="h-5 w-5 text-success group-hover:scale-110 transition-transform" />
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-3d mb-1">4.2m</div>
+            <p className="text-sm text-muted-foreground">
+              <span className="text-success font-semibold">-18%</span> improvement
             </p>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
-        <Card className="shadow-card">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Investment Rate</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">23%</div>
-            <p className="text-xs text-muted-foreground">
-              <span className="text-success">+5%</span> vs industry avg
+        <div className="data-panel p-6 rounded-2xl hover:shadow-glow transition-all duration-500 group">
+          <div className="flex flex-row items-center justify-between space-y-0 pb-3">
+            <h3 className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">Investment Rate</h3>
+            <Users className="h-5 w-5 text-accent group-hover:scale-110 transition-transform" />
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-3d mb-1">23%</div>
+            <p className="text-sm text-muted-foreground">
+              <span className="text-success font-semibold">+5%</span> vs industry avg
             </p>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
 
       {/* Deal Pipeline */}
-      <Card className="shadow-elegant">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-accent" />
-            Recent Deals
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {mockDeals.map((deal) => (
-              <div key={deal.id} className="flex items-center justify-between p-4 border border-border rounded-lg hover:shadow-card transition-shadow">
-                <div className="flex items-center space-x-4 flex-1">
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-semibold text-foreground truncate">{deal.company}</h3>
-                      <Badge variant="outline">{deal.stage}</Badge>
-                      <Badge variant={getRiskColor(deal.risk)} className="text-xs">
-                        {deal.risk} risk
-                      </Badge>
-                    </div>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <span>{deal.sector}</span>
-                      <span>•</span>
-                      <span>{deal.valuation}</span>
-                      <span>•</span>
-                      <span>{deal.lastUpdate}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-6">
-                  {/* Metrics */}
-                  <div className="hidden md:flex flex-col text-right text-sm">
-                    <span className="font-medium">{deal.metrics.arr} ARR</span>
-                    <span className="text-success">{deal.metrics.growth}</span>
-                  </div>
-
-                  {/* Progress */}
-                  <div className="flex items-center space-x-3">
-                    <div className="w-24">
-                      <Progress value={deal.progress} className="h-2" />
-                    </div>
-                    <Badge variant={getStatusColor(deal.status)}>
-                      {deal.status === "completed" && <CheckCircle2 className="w-3 h-3 mr-1" />}
-                      {deal.status === "analyzing" && <Clock className="w-3 h-3 mr-1 animate-spin" />}
-                      {deal.status === "pending" && <AlertTriangle className="w-3 h-3 mr-1" />}
-                      {deal.status}
+      <div className="glass-panel p-8 rounded-3xl shadow-elevated">
+        <div className="flex items-center gap-3 mb-8">
+          <TrendingUp className="h-6 w-6 text-accent animate-float" />
+          <h2 className="text-2xl font-bold text-3d">Recent Deals</h2>
+        </div>
+        <div className="space-y-6">
+          {mockDeals.map((deal) => (
+            <div key={deal.id} className="flex items-center justify-between p-6 border border-border rounded-2xl hover:shadow-card transition-all duration-300 data-panel">
+              <div className="flex items-center space-x-6 flex-1">
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="font-bold text-foreground truncate text-lg text-3d">{deal.company}</h3>
+                    <Badge variant="outline" className="font-semibold">{deal.stage}</Badge>
+                    <Badge variant={getRiskColor(deal.risk)} className="text-xs font-semibold">
+                      {deal.risk} risk
                     </Badge>
                   </div>
-
-                  {/* Actions */}
-                  <Button variant="ghost" size="sm">
-                    <Eye className="h-4 w-4" />
-                  </Button>
+                  <div className="flex items-center gap-6 text-sm text-muted-foreground font-medium">
+                    <span>{deal.sector}</span>
+                    <span>•</span>
+                    <span className="font-semibold">{deal.valuation}</span>
+                    <span>•</span>
+                    <span>{deal.lastUpdate}</span>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+
+              <div className="flex items-center space-x-8">
+                {/* Metrics */}
+                <div className="hidden md:flex flex-col text-right text-sm">
+                  <span className="font-bold text-foreground text-3d">{deal.metrics.arr} ARR</span>
+                  <span className="text-success font-semibold">{deal.metrics.growth}</span>
+                </div>
+
+                {/* Progress */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-32">
+                    <Progress value={deal.progress} className="h-3" />
+                  </div>
+                  <Badge variant={getStatusColor(deal.status)} className="font-semibold">
+                    {deal.status === "completed" && <CheckCircle2 className="w-4 h-4 mr-1" />}
+                    {deal.status === "analyzing" && <Clock className="w-4 h-4 mr-1 animate-spin" />}
+                    {deal.status === "pending" && <AlertTriangle className="w-4 h-4 mr-1" />}
+                    {deal.status}
+                  </Badge>
+                </div>
+
+                {/* Actions */}
+                <Button variant="terminal" size="sm" className="hover:scale-105 transition-transform">
+                  <Eye className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

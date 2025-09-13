@@ -23,52 +23,52 @@ export const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 animate-slide-up">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6 animate-slide-up text-3d-xl">
             AI-Powered
-            <span className="block text-accent">Startup Evaluation</span>
+            <span className="block text-accent animate-glow">Startup Evaluation</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto animate-slide-up">
+          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto animate-slide-up font-medium">
             Transform hours of manual analysis into minutes of AI-driven insights. 
             Evaluate startups with the precision of top-tier investment firms.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-scale-in">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-scale-in">
             <Button 
               size="xl" 
               variant="glass"
               onClick={onGetStarted}
-              className="text-lg"
+              className="text-lg font-semibold shadow-elevated hover:shadow-glow"
             >
               Start Analysis <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
               size="xl" 
               variant="outline"
-              className="text-lg border-white/30 text-primary-foreground hover:bg-white/10"
+              className="text-lg font-semibold border-accent/30 text-primary-foreground hover:bg-accent/10 hover:border-accent/50 terminal-border"
             >
               Watch Demo
             </Button>
           </div>
 
           {/* Feature Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto animate-fade-in">
-            <div className="glass-card p-6 rounded-xl">
-              <Zap className="h-8 w-8 text-accent mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold text-primary-foreground mb-2">Lightning Fast</h3>
-              <p className="text-primary-foreground/80">Complete analysis in under 5 minutes</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto animate-fade-in">
+            <div className="glass-panel p-8 rounded-2xl hover:shadow-glow transition-all duration-500 group">
+              <Zap className="h-10 w-10 text-accent mb-6 mx-auto animate-float group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-primary-foreground mb-3 text-3d">Lightning Fast</h3>
+              <p className="text-primary-foreground/80 font-medium">Complete analysis in under 5 minutes</p>
             </div>
             
-            <div className="glass-card p-6 rounded-xl">
-              <TrendingUp className="h-8 w-8 text-accent mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold text-primary-foreground mb-2">Market Insights</h3>
-              <p className="text-primary-foreground/80">Real-time benchmarking against industry data</p>
+            <div className="glass-panel p-8 rounded-2xl hover:shadow-glow transition-all duration-500 group">
+              <TrendingUp className="h-10 w-10 text-accent mb-6 mx-auto animate-float group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-primary-foreground mb-3 text-3d">Market Insights</h3>
+              <p className="text-primary-foreground/80 font-medium">Real-time benchmarking against industry data</p>
             </div>
             
-            <div className="glass-card p-6 rounded-xl">
-              <Shield className="h-8 w-8 text-accent mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold text-primary-foreground mb-2">Risk Assessment</h3>
-              <p className="text-primary-foreground/80">AI-driven red flag detection</p>
+            <div className="glass-panel p-8 rounded-2xl hover:shadow-glow transition-all duration-500 group">
+              <Shield className="h-10 w-10 text-accent mb-6 mx-auto animate-float group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-primary-foreground mb-3 text-3d">Risk Assessment</h3>
+              <p className="text-primary-foreground/80 font-medium">AI-driven red flag detection</p>
             </div>
           </div>
         </div>
