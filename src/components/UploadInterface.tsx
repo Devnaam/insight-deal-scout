@@ -130,12 +130,13 @@ export const UploadInterface = ({ onAnalysisStart }: UploadInterfaceProps = {}) 
 
   const startAnalysis = async () => {
     if (!onAnalysisStart) return;
-    
     const fileNames = files
       .filter(f => f.status === "completed")
       .map(f => f.name);
-    
-    await onAnalysisStart(companyName, stage, fileNames);
+    if (fileNames.length === 0) return;
+    const name = companyName?.trim() || "Untitled Startup";
+    const s = stage?.trim() || "Unknown";
+    await onAnalysisStart(name, s, fileNames);
   };
 
   const completedFiles = files.filter(f => f.status === "completed").length;
@@ -286,7 +287,7 @@ export const UploadInterface = ({ onAnalysisStart }: UploadInterfaceProps = {}) 
             variant="hero"
             size="xl"
             onClick={startAnalysis}
-            disabled={!companyName || !stage || completedFiles === 0}
+            disabled={completedFiles === 0}
             className="min-w-64 font-bold animate-glow"
           >
             {completedFiles > 0 && completedFiles < totalFiles ? (

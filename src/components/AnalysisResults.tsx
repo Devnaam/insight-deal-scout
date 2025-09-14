@@ -64,6 +64,30 @@ export const AnalysisResults = ({ analysis, onBack }: AnalysisResultsProps) => {
           </Badge>
         </div>
 
+        {/* Investibility Status */}
+        <Card className="glass-panel shadow-elevated">
+          <CardContent className="p-6 flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              {analysis.recommendation.decision === "Invest" ? (
+                <CheckCircle2 className="h-8 w-8 text-success" />
+              ) : (
+                <AlertTriangle className="h-8 w-8 text-destructive" />
+              )}
+              <div>
+                <h2 className="text-2xl font-bold text-3d">
+                  {analysis.recommendation.decision === "Invest" ? "Investible" : analysis.recommendation.decision === "Track" ? "Track - Needs More Data" : "Not Investible"}
+                </h2>
+                <p className="text-muted-foreground font-medium">
+                  Confidence: {analysis.recommendation.confidence}% • Stage: {analysis.stage}
+                </p>
+              </div>
+            </div>
+            <Badge variant={getDecisionColor(analysis.recommendation.decision)} className="text-lg font-bold px-4 py-2">
+              {analysis.recommendation.decision}
+            </Badge>
+          </CardContent>
+        </Card>
+
         {/* Executive Summary */}
         <Card className="glass-panel shadow-elevated">
           <CardHeader>
