@@ -41,7 +41,11 @@ const getFileTypeColor = (type: string) => {
   return "text-orange-500";
 };
 
-export const UploadInterface = () => {
+interface UploadInterfaceProps {
+  onAnalysisStart?: (companyName: string, stage: string, files: string[]) => Promise<void>;
+}
+
+export const UploadInterface = ({ onAnalysisStart }: UploadInterfaceProps = {}) => {
   const [files, setFiles] = useState<FileUpload[]>([]);
   const [companyName, setCompanyName] = useState("");
   const [stage, setStage] = useState("");
@@ -124,9 +128,14 @@ export const UploadInterface = () => {
     setFiles(prev => prev.filter(file => file.id !== fileId));
   };
 
-  const startAnalysis = () => {
-    // Handle analysis start
-    console.log("Starting analysis for:", { companyName, stage, files });
+  const startAnalysis = async () => {
+    if (!onAnalysisStart) return;
+    
+    const fileNames = files
+      .filter(f => f.status === "completed")
+      .map(f => f.name);
+    
+    await onAnalysisStart(companyName, stage, fileNames);
   };
 
   const completedFiles = files.filter(f => f.status === "completed").length;
